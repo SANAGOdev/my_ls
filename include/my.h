@@ -12,6 +12,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 void my_putchar(char c);
 void my_putstr(char *str);
