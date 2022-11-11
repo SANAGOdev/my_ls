@@ -16,5 +16,7 @@
 
 void my_putchar(char c);
 void my_putstr(char *str);
+int my_ls(int argc, char *argv);
+int flag_check(int argc, char **argv);
 
 #endif /* !MY_ */

@@ -9,24 +9,13 @@
 
 int main(int argc, char **argv)
 {
-
-    DIR *dir = opendir(argv[1]);
-    if (dir == NULL)
-        return 84;
-
-
-    struct dirent *entity;
-    entity = readdir(dir);
-
-    while (entity != NULL) {
-    struct stat info;
-    char *dossier = entity->d_name;
-    stat(dossier, &info);
-        printf("Inode: %d\t", (int)info.st_ino);
-        printf("Name : %s\n", entity->d_name);
-        entity = readdir(dir);
-    }
-
-    closedir(dir);
+    // if (argc != 2 && argv[2] == '-l') {
+    //     flag_check(argc, **argv);
+    // }
+    // else {
+    //     my_ls(argc, argv[1]);
+    // }
+    my_ls(argc, argv[1]);
+    
     return 0;
 }
