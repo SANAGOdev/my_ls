@@ -1,18 +1,37 @@
+/*
+** EPITECH PROJECT, 2022
+** flag_check
+** File description:
+** flag check
+*/
 
 #include "../include/my.h"
 
-int flag_check(int argc, char **argv)
+int my_ls(int argc, char **argv)
 {
-    if (argc != 2 && argv[2] == '-l') {
-        DIR *dir = opendir(argv[1]);
-        if (dir == NULL)
-            return 84;
+    DIR *dir = opendir(argv[1]);
+    if (dir == NULL)
+        return 84;
+    struct dirent *entity;
+    entity = readdir(dir);
+    char *flag = argv[2];
 
-        struct dirent *entity;
-        entity = readdir(dir);
-
-        
+    while (entity != NULL) {
+        if (flag == "-l") {
+            struct stat info;
+            char *dossier = entity->d_name;
+            stat(dossier, &info);
+            printf("Inode : %d\t", (int)info.st_ino);
+            printf("Name : %s", entity->d_name);
+            entity = readdir(dir);
+        }
+        else {
+            printf("%s\n", entity->d_name);
+            entity = readdir(dir);
+        }
     }
+    closedir(dir);
+    return 0;
 }
 // int my_ls(int argc, char *argv)
 // {

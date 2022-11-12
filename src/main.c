@@ -15,7 +15,7 @@ int main(int argc, char **argv)
     // else {
     //     my_ls(argc, argv[1]);
     // }
-    my_ls(argc, argv[1]);
+    my_ls(argc, argv);
     
     return 0;
 }
