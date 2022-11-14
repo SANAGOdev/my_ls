@@ -17,16 +17,16 @@ int my_ls(int argc, char **argv)
     char *flag = argv[2];
 
     while (entity != NULL) {
-        if (flag == "-l") {
+        if (flag == NULL) {
+            printf("%s\n", entity->d_name);
+            entity = readdir(dir);
+        }
+        else if (strcmp(flag, "-l") == 0) {
             struct stat info;
             char *dossier = entity->d_name;
             stat(dossier, &info);
             printf("Inode : %d\t", (int)info.st_ino);
-            printf("Name : %s", entity->d_name);
-            entity = readdir(dir);
-        }
-        else {
-            printf("%s\n", entity->d_name);
+            printf("Name : %s\n", entity->d_name);
             entity = readdir(dir);
         }
     }
