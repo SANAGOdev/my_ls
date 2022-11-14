@@ -17,6 +17,7 @@
 
 void my_putchar(char c);
 void my_putstr(char *str);
+int my_put_nbr(int nb);
 int my_ls(int argc, char **argv);
 
 #endif /* !MY_ */
