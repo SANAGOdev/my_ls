@@ -9,12 +9,6 @@
 
 int main(int argc, char **argv)
 {
-    // if (argc != 2 && argv[2] == '-l') {
-    //     flag_check(argc, **argv);
-    // }
-    // else {
-    //     my_ls(argc, argv[1]);
-    // }
     my_ls(argc, argv);
     
     return 0;
