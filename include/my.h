@@ -25,5 +25,6 @@ int my_put_nbr(int nb);
 int my_ls(int argc, char **argv);
 char *get_uid_name(int uid);
 char *get_gid_name(int gid);
+int cut_date(char *time);
 
 #endif /* !MY_ */
