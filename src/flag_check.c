@@ -44,7 +44,7 @@ int my_ls(int argc, char **argv)
             }
             printf("%s\t", get_id_name(info.st_uid));
             printf("%s\t", get_id_name(info.st_gid));
-            printf("\%d\t", info.st_size);
+            printf("%d\t", info.st_size);
             printf("%s\n", entity->d_name);
         }
         entity = readdir(dir);
