@@ -14,10 +14,13 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <sys/types.h>
+#include <pwd.h>
 
 void my_putchar(char c);
 void my_putstr(char *str);
 int my_put_nbr(int nb);
 int my_ls(int argc, char **argv);
+char *get_id_name(int id);
 
 #endif /* !MY_ */
