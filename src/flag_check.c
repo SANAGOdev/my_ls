@@ -42,9 +42,10 @@ int my_ls(int argc, char **argv)
             else if ((int)entity->d_type == 4) {
                 printf("2 ");
             }
-            printf("%s\t", get_id_name(info.st_uid));
-            printf("%s\t", get_id_name(info.st_gid));
-            printf("%d\t", info.st_size);
+            printf("%s  ", get_uid_name(info.st_uid));
+            printf("%s  ", get_gid_name(info.st_gid));
+            printf("%d  ", info.st_size);
+            //printf("%s  ", ctime(&info.st_atime));
             printf("%s\n", entity->d_name);
         }
         entity = readdir(dir);

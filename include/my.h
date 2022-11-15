@@ -16,11 +16,14 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <pwd.h>
+#include <grp.h>
+#include <time.h>
 
 void my_putchar(char c);
 void my_putstr(char *str);
 int my_put_nbr(int nb);
 int my_ls(int argc, char **argv);
-char *get_id_name(int id);
+char *get_uid_name(int uid);
+char *get_gid_name(int gid);
 
 #endif /* !MY_ */

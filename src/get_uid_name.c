@@ -7,9 +7,9 @@
 
 #include "../include/my.h"
 
-char *get_id_name(int id)
+char *get_uid_name(int uid)
 {
     struct passwd *pws;
-    pws = getpwuid(id);
+    pws = getpwuid(uid);
     return pws->pw_name;
 }
