@@ -16,7 +16,8 @@ int my_ls(int argc, char **argv)
     if (dir == NULL)
         return 84;
 
-    struct dirent *entity;
+    struct dirent *entity = malloc(sizeof(struct dirent));
+    struct stat *info = malloc(sizeof(struct stat));
     entity = readdir(dir);
 
     char *flag;
@@ -32,19 +33,20 @@ int my_ls(int argc, char **argv)
             my_putstr("  ");
         }
         else if (strcmp(flag, "-l") == 0) {
-            struct stat info;
             char *dossier = entity->d_name;
-            stat(dossier, &info);
-            get_rights(info.st_mode);
+            stat(dossier, info);
+            get_rights(info->st_mode);
             printf("%d ", count_content(entity));
-            printf("%s  ", get_uid_name(info.st_uid));
-            printf("%s  ", get_gid_name(info.st_gid));
-            printf("%d  ", info.st_size);
-            cut_date(ctime(&info.st_mtime));
+            printf("%s  ", get_uid_name(info->st_uid));
+            printf("%s  ", get_gid_name(info->st_gid));
+            printf("%ld  ", info->st_size);
+            cut_date(ctime(&info->st_mtime));
             printf("%s\n", entity->d_name);
         }
         entity = readdir(dir);
     }
+    free(entity);
+    free(info);
     closedir(dir);
     my_putchar('\n');
     return 0;
