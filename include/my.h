@@ -27,5 +27,7 @@ char *get_uid_name(int uid);
 char *get_gid_name(int gid);
 int cut_date(char *time);
 int get_rights(int stmode);
+int count_content(struct dirent *entity);
+int ignore_dotfiles(char *dname);
 
 #endif /* !MY_ */

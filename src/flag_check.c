@@ -25,8 +25,7 @@ int my_ls(int argc, char **argv)
     else if (argv[2] == NULL)
         flag = argv[1];
     while (entity != NULL) {
-        char *dname = entity->d_name;
-        if (dname[0] == '.')
+        if (entity->d_name[0] == '.')
             NULL;
         else if (flag == NULL || flag[0] != '-') {
             my_putstr(entity->d_name);
@@ -37,12 +36,7 @@ int my_ls(int argc, char **argv)
             char *dossier = entity->d_name;
             stat(dossier, &info);
             get_rights(info.st_mode);
-            if ((int)entity->d_type == 8) {
-                printf("1 ");
-            }
-            else if ((int)entity->d_type == 4) {
-                printf("2 ");
-            }
+            printf("%d ", count_content(entity));
             printf("%s  ", get_uid_name(info.st_uid));
             printf("%s  ", get_gid_name(info.st_gid));
             printf("%d  ", info.st_size);
