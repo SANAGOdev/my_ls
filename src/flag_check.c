@@ -36,6 +36,7 @@ int my_ls(int argc, char **argv)
             struct stat info;
             char *dossier = entity->d_name;
             stat(dossier, &info);
+            get_rights(info.st_mode);
             if ((int)entity->d_type == 8) {
                 printf("1 ");
             }

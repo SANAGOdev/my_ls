@@ -26,5 +26,6 @@ int my_ls(int argc, char **argv);
 char *get_uid_name(int uid);
 char *get_gid_name(int gid);
 int cut_date(char *time);
+int get_rights(int stmode);
 
 #endif /* !MY_ */
