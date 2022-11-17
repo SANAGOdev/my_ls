@@ -9,9 +9,7 @@
 
 int my_ls(int argc, char **argv)
 {
-    char *opendirectory = argv[1];
-    if (argv[1] == NULL || argv[1][0] == '-')
-        opendirectory = ".";
+    char *opendirectory = get_directory(argc, argv);
     DIR *dir = opendir(opendirectory);
     if (dir == NULL)
         return 84;

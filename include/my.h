@@ -31,5 +31,6 @@ int get_rights(int stmode);
 int count_content(struct dirent *entity);
 int get_total(char *current_dir);
 char *flag_check(int argc, char **argv);
+char *get_directory(int argc, char **argv);
 
 #endif /* !MY_ */
