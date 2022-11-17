@@ -6,20 +6,19 @@
 */
 
 #ifndef MY_
-#define MY_
-
-#include <dirent.h>
-#include <stddef.h>
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <pwd.h>
-#include <grp.h>
-#include <time.h>
+    #define MY_
+    #include <dirent.h>
+    #include <stddef.h>
+    #include <stdio.h>
+    #include <stdarg.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include <unistd.h>
+    #include <sys/stat.h>
+    #include <sys/types.h>
+    #include <pwd.h>
+    #include <grp.h>
+    #include <time.h>
 
 void my_putchar(char c);
 void my_putstr(char *str);
