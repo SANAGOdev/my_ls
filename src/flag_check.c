@@ -19,12 +19,13 @@ int my_ls(int argc, char **argv)
     struct dirent *entity = malloc(sizeof(struct dirent));
     struct stat *info = malloc(sizeof(struct stat));
     entity = readdir(dir);
-
     char *flag;
     if (argv[2] != NULL)
         flag = argv[2];
     else if (argv[2] == NULL)
         flag = argv[1];
+    if (strcmp(flag, "-l") == 0)
+        printf("total %d\n", get_total(opendirectory));
     while (entity != NULL) {
         if (entity->d_name[0] == '.')
             NULL;
