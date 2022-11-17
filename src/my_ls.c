@@ -33,7 +33,6 @@ int my_ls(int argc, char **argv)
         else if (strcmp(flag, "-l") == 0) {
             char *dossier = entity->d_name;
             stat(dossier, info);
-            printf("%ld", info->st_blocks);
             get_rights(info->st_mode);
             printf("%d ", count_content(entity));
             printf("%s  ", get_uid_name(info->st_uid));
