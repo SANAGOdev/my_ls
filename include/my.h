@@ -11,6 +11,7 @@
 #include <dirent.h>
 #include <stddef.h>
 #include <stdio.h>
+#include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -32,5 +33,8 @@ int count_content(struct dirent *entity);
 int get_total(char *current_dir);
 char *flag_check(int argc, char **argv);
 char *get_directory(int argc, char **argv);
+int conditions01(const char* format, int i, va_list list);
+int my_strlen(char const *arr);
+int my_printf(const char* format, ...);
 
 #endif /* !MY_ */

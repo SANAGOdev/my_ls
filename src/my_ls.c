@@ -20,30 +20,30 @@ int my_ls(int argc, char **argv)
     char *flag = flag_check(argc, argv);
 
     if (strcmp(flag, "-l") == 0)
-        printf("total %d\n", get_total(opendirectory));
+        my_printf("total %d\n", get_total(opendirectory));
     while (entity != NULL) {
         if (entity->d_name[0] == '.')
             NULL;
         else if (flag == NULL || flag[0] != '-') {
-            my_putstr(entity->d_name);
-            my_putstr("  ");
+            my_printf("%s", entity->d_name);
+            my_printf("  ");
         }
         else if (strcmp(flag, "-l") == 0) {
             char *dossier = entity->d_name;
             stat(dossier, info);
             get_rights(info->st_mode);
-            printf("%d ", count_content(entity));
-            printf("%s  ", get_uid_name(info->st_uid));
-            printf("%s  ", get_gid_name(info->st_gid));
-            printf("%ld  ", info->st_size);
+            my_printf("%d ", count_content(entity));
+            my_printf("%s  ", get_uid_name(info->st_uid));
+            my_printf("%s  ", get_gid_name(info->st_gid));
+            my_printf("%d  ", info->st_size);
             cut_date(ctime(&info->st_mtime));
-            printf("%s\n", entity->d_name);
+            my_printf("%s\n", entity->d_name);
         }
         entity = readdir(dir);
     }
     free(entity);
     free(info);
     closedir(dir);
-    my_putchar('\n');
+    my_printf("\n");
     return 0;
 }

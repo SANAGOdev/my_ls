@@ -11,9 +11,9 @@ int cut_date(char *time)
 {
     int i = 4;
     for (i; i < 16; i++) {
-        printf("%c", time[i]);
+        my_printf("%c", time[i]);
     }
-    printf("  ");
+    my_printf("  ");
     time[16] = '\0';
     return 0;
 }
